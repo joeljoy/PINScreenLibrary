@@ -8,4 +8,9 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/color_primary_dark</item>
     </style>
+
+    <style name="PinStatus" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/color_pin_status_text</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

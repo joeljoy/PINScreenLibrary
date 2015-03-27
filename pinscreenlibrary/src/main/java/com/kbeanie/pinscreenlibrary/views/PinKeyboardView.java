@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+
 import com.kbeanie.pinscreenlibrary.R;
 
 /**
@@ -26,6 +27,8 @@ public class PinKeyboardView extends LinearLayout {
     Button pin9;
     Button pinDot;
     Button pinDelete;
+
+    private PinEntryView pinEntryView;
 
     public PinKeyboardView(Context context) {
         super(context);
@@ -52,21 +55,17 @@ public class PinKeyboardView extends LinearLayout {
 
     private void setupButtons(View view) {
         pin0 = (Button) view.findViewById(R.id.pin0);
-        pin1 = (Button) view.findViewById(R.id.pin0);
-        pin2 = (Button) view.findViewById(R.id.pin0);
-        pin3 = (Button) view.findViewById(R.id.pin0);
-        pin4 = (Button) view.findViewById(R.id.pin0);
-        pin5 = (Button) view.findViewById(R.id.pin0);
-        pin6 = (Button) view.findViewById(R.id.pin0);
-        pin7 = (Button) view.findViewById(R.id.pin0);
-        pin8 = (Button) view.findViewById(R.id.pin0);
-        pin9 = (Button) view.findViewById(R.id.pin0);
+        pin1 = (Button) view.findViewById(R.id.pin1);
+        pin2 = (Button) view.findViewById(R.id.pin2);
+        pin3 = (Button) view.findViewById(R.id.pin3);
+        pin4 = (Button) view.findViewById(R.id.pin4);
+        pin5 = (Button) view.findViewById(R.id.pin5);
+        pin6 = (Button) view.findViewById(R.id.pin6);
+        pin7 = (Button) view.findViewById(R.id.pin7);
+        pin8 = (Button) view.findViewById(R.id.pin8);
+        pin9 = (Button) view.findViewById(R.id.pin9);
         pinDelete = (Button) view.findViewById(R.id.pinDelete);
         pinDot = (Button) view.findViewById(R.id.pinDot);
-    }
-
-    public void setListener(PinKeyboardListener listener) {
-        this.listener = listener;
     }
 
     private void setupListeners() {
@@ -146,8 +145,16 @@ public class PinKeyboardView extends LinearLayout {
     }
 
     private void setListener(PinButtons which) {
-        if (listener != null) {
-            listener.onButtonClick(which);
+        try {
+            if (pinEntryView != null) {
+                pinEntryView.sendKey(which);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+    }
+
+    public void setPinEntryView(PinEntryView view) {
+        this.pinEntryView = view;
     }
 }

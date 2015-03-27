@@ -10,23 +10,13 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvStatus"
+    <com.kbeanie.pinscreenlibrary.views.PinEntryView
+        android:id="@+id/pinEntryView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:text="Status"
-        android:gravity="center" />
+        android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/buttonSetup"
+    <com.kbeanie.pinscreenlibrary.views.PinKeyboardView
+        android:id="@+id/pinKeyboardView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SET PIN" />
-
-    <Button
-        android:id="@+id/buttonClearPIN"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="CLEAR PIN" />
+        android:layout_height="wrap_content" />
 </LinearLayout>

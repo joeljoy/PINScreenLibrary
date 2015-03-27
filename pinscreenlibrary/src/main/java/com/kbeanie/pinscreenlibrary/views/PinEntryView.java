@@ -85,7 +85,7 @@ public class PinEntryView extends LinearLayout {
         imgViews[1] = (PinImageView) view.findViewById(R.id.pe1);
         imgViews[2] = (PinImageView) view.findViewById(R.id.pe2);
         imgViews[3] = (PinImageView) view.findViewById(R.id.pe3);
-        tvMessage = (TextView)view.findViewById(R.id.tvMessage);
+        tvMessage = (TextView) view.findViewById(R.id.tvMessage);
         addView(view, params);
     }
 
@@ -112,6 +112,9 @@ public class PinEntryView extends LinearLayout {
             case BUTTON_7:
             case BUTTON_8:
             case BUTTON_9:
+                if (charIndex == -1 && state == STATE_INITIAL) {
+                    tvMessage.setText(R.string.enter_pin);
+                }
                 if (charIndex >= -1 && charIndex <= 2) {
                     charIndex++;
                     imgViews[charIndex].setSelected(true);

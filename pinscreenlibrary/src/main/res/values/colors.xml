@@ -3,4 +3,6 @@
     <color name="color_primary">#99CC00</color>
     <color name="color_primary_dark">#669900</color>
     <color name="color_accent">#85cee80d</color>
+
+    <color name="color_pin_status_text">#FF4444</color>
 </resources>

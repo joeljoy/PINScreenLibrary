@@ -12,28 +12,28 @@
         android:paddingTop="15dp"
         android:paddingBottom="15dp">
 
-        <com.kbeanie.managereceipts.views.pin.PinImageView
+        <com.kbeanie.pinscreenlibrary.views.PinImageView
             android:id="@+id/pe0"
             android:layout_margin="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/selector_pin_entry" />
 
-        <com.kbeanie.managereceipts.views.pin.PinImageView
+        <com.kbeanie.pinscreenlibrary.views.PinImageView
             android:id="@+id/pe1"
             android:layout_margin="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/selector_pin_entry" />
 
-        <com.kbeanie.managereceipts.views.pin.PinImageView
+        <com.kbeanie.pinscreenlibrary.views.PinImageView
             android:id="@+id/pe2"
             android:layout_margin="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/selector_pin_entry" />
 
-        <com.kbeanie.managereceipts.views.pin.PinImageView
+        <com.kbeanie.pinscreenlibrary.views.PinImageView
             android:id="@+id/pe3"
             android:layout_margin="5dp"
             android:layout_width="wrap_content"
@@ -42,6 +42,8 @@
     </LinearLayout>
 
     <TextView
+        android:gravity="center_horizontal"
+        style="@style/PinStatus"
         android:id="@+id/tvMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
