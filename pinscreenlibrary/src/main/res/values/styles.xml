@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <style name="PinButton" parent="Base.Widget.AppCompat.Button">
+        <item name="android:background">@drawable/selector_button</item>
+        <item name="android:textSize">@dimen/pin_button_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/color_primary_dark</item>
+    </style>
+</resources>

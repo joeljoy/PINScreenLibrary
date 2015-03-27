@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PinScreenLibrary</string>
+    <string name="setup_pin">Setup PIN</string>
+    <string name="enter_pin">Enter 4-digit PIN</string>
+    <string name="confirm_pin">Confirm your PIN</string>
+    <string name="pin_mismatch">PIN mismatch. Try again</string>
+</resources>
