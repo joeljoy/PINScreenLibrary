@@ -10,13 +10,8 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <com.kbeanie.pinscreenlibrary.views.PinEntryView
-        android:id="@+id/pinEntryView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <com.kbeanie.pinscreenlibrary.views.PinKeyboardView
-        android:id="@+id/pinKeyboardView"
+    <com.kbeanie.pinscreenlibrary.views.PinView
+        android:id="@+id/pinView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>

@@ -6,25 +6,21 @@ import android.support.v7.app.ActionBarActivity;
 import com.kbeanie.pinscreenlibrary.views.PinEntryAuthenticationListener;
 import com.kbeanie.pinscreenlibrary.views.PinEntryView;
 import com.kbeanie.pinscreenlibrary.views.PinKeyboardView;
+import com.kbeanie.pinscreenlibrary.views.PinView;
 
 /**
  * Created by kbibek on 3/27/15.
  */
 public class PinUnlockActivity extends ActionBarActivity implements PinEntryAuthenticationListener {
-
-    private PinEntryView pinEntryView;
-    private PinKeyboardView pinKeyboardView;
+    private PinView pinView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pin_setup);
 
-        pinKeyboardView = (PinKeyboardView) findViewById(R.id.pinKeyboardView);
-        pinEntryView = (PinEntryView) findViewById(R.id.pinEntryView);
-        pinEntryView.setModeAuthenticate();
-        pinKeyboardView.setPinEntryView(pinEntryView);
-        pinEntryView.setupAuthenticationListener(this);
+        pinView = (PinView) findViewById(R.id.pinView);
+        pinView.setModeAuthenticate(this);
     }
 
     @Override
