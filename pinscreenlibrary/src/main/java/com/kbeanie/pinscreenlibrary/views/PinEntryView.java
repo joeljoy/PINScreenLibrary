@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.kbeanie.pinscreenlibrary.BuildConfig;
 import com.kbeanie.pinscreenlibrary.R;
+import com.kbeanie.pinscreenlibrary.storage.PINPreferences;
 
 /**
  * Created by kbibek on 3/27/15.
@@ -38,6 +39,7 @@ public class PinEntryView extends LinearLayout {
     private PinImageView[] imgViews = new PinImageView[4];
 
     private PinEntrySetupListener setupListener;
+    private PinEntryAuthenticationListener authenticationListener;
 
     public PinEntryView(Context context) {
         super(context);
@@ -61,13 +63,21 @@ public class PinEntryView extends LinearLayout {
         this.state = STATE_INITIAL;
     }
 
-    public void setModeAuthenticate(String pin) {
+    public void setModeAuthenticate() {
         this.mode = MODE_AUTHENTICATE;
-        this.pin = pin;
+        unsetVariables();
+        this.state = STATE_INITIAL;
+        tvMessage.setText(R.string.enter_pin_to_unlock);
+        PINPreferences preferences = new PINPreferences(getContext());
+        this.pin = preferences.getPIN();
     }
 
     public void setSetupListener(PinEntrySetupListener listener) {
         this.setupListener = listener;
+    }
+
+    public void setupAuthenticationListener(PinEntryAuthenticationListener listener) {
+        this.authenticationListener = listener;
     }
 
     public void sendKey(PinButtons key) throws Exception {
@@ -145,8 +155,14 @@ public class PinEntryView extends LinearLayout {
             if (state == STATE_INITIAL) {
                 tvMessage.setText(R.string.confirm_pin);
                 state = STATE_CONFIRM;
+                if (setupListener != null) {
+                    setupListener.onPinEntered(getString(pinArray));
+                }
                 unsetAllPins();
             } else if (state == STATE_CONFIRM) {
+                if (setupListener != null) {
+                    setupListener.onPinConfirmed(getString(pinConfirmArray));
+                }
                 boolean pinEqual = true;
                 String setPin = "";
                 for (int i = 0; i < 4; i++) {
@@ -160,8 +176,10 @@ public class PinEntryView extends LinearLayout {
                     if (BuildConfig.DEBUG) {
                         Log.i(TAG, "Pin Setup : " + setPin);
                     }
+                    PINPreferences preferences = new PINPreferences(getContext());
+                    preferences.setPIN(setPin);
                     if (setupListener != null) {
-                        setupListener.onPinConfirmed(setPin);
+                        setupListener.onPinSet(setPin);
                     }
                 } else {
                     if (BuildConfig.DEBUG) {
@@ -177,11 +195,59 @@ public class PinEntryView extends LinearLayout {
                     unsetVariables();
                 }
             }
+        } else if (mode == MODE_AUTHENTICATE) {
+            if (BuildConfig.DEBUG) {
+                Log.i(TAG, "PIN entered: " + getString(pinArray));
+            }
+            if (pin.equalsIgnoreCase(getString(pinArray))) {
+                if (authenticationListener != null) {
+                    authenticationListener.onPinCorrect();
+                }
+            } else {
+                presentErrorUI();
+                unsetAllPins();
+                unsetVariables();
+                tvMessage.setText(R.string.wrong_pin);
+                if (authenticationListener != null) {
+                    authenticationListener.onPinWrong();
+                }
+            }
         }
     }
 
     private void processKeyForAuthentication(PinButtons key) {
-
+        switch (key) {
+            case BUTTON_0:
+            case BUTTON_1:
+            case BUTTON_2:
+            case BUTTON_3:
+            case BUTTON_4:
+            case BUTTON_5:
+            case BUTTON_6:
+            case BUTTON_7:
+            case BUTTON_8:
+            case BUTTON_9:
+                if (charIndex == -1 && state == STATE_INITIAL) {
+                    tvMessage.setText(R.string.enter_pin_to_unlock);
+                }
+                if (charIndex >= -1 && charIndex <= 2) {
+                    charIndex++;
+                    imgViews[charIndex].setSelected(true);
+                    pinArray[charIndex] = key.ordinal();
+                }
+                if (charIndex == 3) {
+                    processKeyEntryComplete();
+                }
+                break;
+            case BUTTON_DOT:
+                break;
+            case BUTTON_DELETE:
+                if (charIndex > -1) {
+                    imgViews[charIndex].setSelected(false);
+                    charIndex--;
+                }
+                break;
+        }
     }
 
     private void presentErrorUI() {
@@ -210,5 +276,13 @@ public class PinEntryView extends LinearLayout {
             pinArray[i] = -1;
             pinConfirmArray[i] = -1;
         }
+    }
+
+    private String getString(int[] array) {
+        String text = "";
+        for (int i = 0; i < array.length; i++) {
+            text = text + array[i];
+        }
+        return text;
     }
 }

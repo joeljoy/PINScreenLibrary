@@ -4,4 +4,6 @@
     <string name="enter_pin">Enter 4-digit PIN</string>
     <string name="confirm_pin">Confirm your PIN</string>
     <string name="pin_mismatch">PIN mismatch. Try again.</string>
+    <string name="enter_pin_to_unlock">Enter PIN to unlock.</string>
+    <string name="wrong_pin">Wrong PIN. Try again.</string>
 </resources>

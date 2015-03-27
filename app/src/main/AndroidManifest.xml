@@ -20,6 +20,10 @@
             android:name=".PinSetupActivity"
             android:screenOrientation="portrait"
             android:label="SETUP PIN" />
+        <activity
+            android:name=".PinUnlockActivity"
+            android:screenOrientation="portrait"
+            android:label="Unlock with Pin" />
     </application>
 
 </manifest>

@@ -24,7 +24,12 @@ public class PINPreferences {
     public void setPIN(String pin) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(KEY_PIN, pin);
+        editor.putBoolean(KEY_PIN_SETUP, true);
         editor.commit();
+    }
+
+    public String getPIN() {
+        return sharedPreferences.getString(KEY_PIN, null);
     }
 
     public void clearPIN() {

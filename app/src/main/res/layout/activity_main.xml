@@ -23,7 +23,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SET PIN" />
-
+    <Button
+        android:id="@+id/buttonUnlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Unlock" />
     <Button
         android:id="@+id/buttonClearPIN"
         android:layout_width="match_parent"

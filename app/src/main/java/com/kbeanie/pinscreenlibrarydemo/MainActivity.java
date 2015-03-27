@@ -17,6 +17,7 @@ public class MainActivity extends ActionBarActivity {
     private TextView tvStatus;
     private Button buttonSetup;
     private Button buttonClearPIN;
+    private Button buttonUnlock;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +50,22 @@ public class MainActivity extends ActionBarActivity {
                 initializeUI();
             }
         });
+        buttonUnlock = (Button) findViewById(R.id.buttonUnlock);
+        buttonUnlock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showPinUnlockScreen();
+            }
+        });
     }
 
     private void showPINSetupScreen() {
         Intent intent = new Intent(this, PinSetupActivity.class);
+        startActivity(intent);
+    }
+
+    private void showPinUnlockScreen() {
+        Intent intent = new Intent(this, PinUnlockActivity.class);
         startActivity(intent);
     }
 
@@ -63,11 +76,12 @@ public class MainActivity extends ActionBarActivity {
 
     private void initializeUI() {
         boolean isPinSetup = isPinSetup();
-        tvStatus.setText("PIN SETUP? = " + isPinSetup);
+        tvStatus.setText("PIN SETUP = " + isPinSetup);
 
 
         buttonSetup.setEnabled(!isPinSetup);
         buttonClearPIN.setEnabled(isPinSetup);
+        buttonUnlock.setEnabled(isPinSetup);
     }
 
     private boolean isPinSetup() {
