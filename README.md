@@ -1,6 +1,28 @@
 #### PIN SCREEN library for Android
 Easy to use library for implementing 4-digit pin lock for your apps
 
+** Simple implementation
+> Approx 10 lines of code
+> Themable views
+> Animated visual cues
+> Vibrate on error
+
+<img src="/screenshots/setup pin.png" width="100"/>
+
+##### Maven
+<pre>
+<code>
+&lt;dependency&gt;
+    &lt;groupId&gt;com.kbeanie&lt;/groupId&gt;
+    &lt;artifactId&gt;pinscreenlibrary&lt;/artifactId&gt;
+    &lt;version&gt;1.0.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code>
+</pre>
+
+##### Configuring on Android Studio
+> compile 'com.kbeanie:pinscreenlibrary:1.0.0@aar'
+
 ##### License
 -----------------------------------------------------------------------------------
 
