@@ -11,7 +11,7 @@ Easy to use library for implementing 4-digit pin lock for your apps
 > Vibrate on error
 
 <div style="text-align: center;">
-    <img src="/screenshots/setup pin.png" width="200"/>
+    <img src="/screenshots/demo.gif" width="200"/>
 </div>
 
 ##### Maven
