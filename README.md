@@ -30,6 +30,7 @@ pinView.setModeAuthenticate(PinEntryAuthenticationListener)
 </pre>
 
 3. Handle callbacks
+
 -----------------------------------------------------------------------------------
 
 <div style="text-align: center;">
