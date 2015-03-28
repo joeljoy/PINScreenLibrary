@@ -24,9 +24,8 @@ Easy to use library for implementing 4-digit pin lock for your apps
 2. Initialize and Setup Modes
 <pre>
 pinView.setModeSetup(PinEntrySetupListener);
-
-or
-
+</pre>
+<pre>
 pinView.setModeAuthenticate(PinEntryAuthenticationListener)
 </pre>
 
