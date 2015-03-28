@@ -2,7 +2,18 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="PinButton">
+        <item name="android:background">@drawable/selector_button</item>
+        <item name="android:textSize">@dimen/pin_button_text_size</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textColor">@color/color_primary_dark</item>
+    </style>
+
+    <style name="PinStatus">
+        <item name="android:textColor">@color/color_pin_status_text</item>
+        <item name="android:textStyle">bold|italic</item>
     </style>
 
 </resources>
