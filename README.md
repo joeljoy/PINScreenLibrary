@@ -15,7 +15,7 @@ Easy to use library for implementing 4-digit pin lock for your apps
 
 1. Add PinView to your layout
 <pre>
-&lt;com.kbeanie.pinscreenlibrary.PinView
+&lt;com.kbeanie.pinscreenlibrary.views.PinView
     android:id="@+id/pinView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" /&gt;
