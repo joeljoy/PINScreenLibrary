@@ -10,7 +10,7 @@ Easy to use library for implementing 4-digit pin lock for your apps
 
 > Vibrate on error
 
-
+-----------------------------------------------------------------------------------
 ##### How to implement
 
 1. Add PinView to your layout
@@ -30,7 +30,7 @@ pinView.setModeAuthenticate(PinEntryAuthenticationListener)
 </pre>
 
 3. Handle callbacks
-
+-----------------------------------------------------------------------------------
 
 <div style="text-align: center;">
     <img src="demo.gif" width="200"/>
