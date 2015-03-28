@@ -10,6 +10,29 @@ Easy to use library for implementing 4-digit pin lock for your apps
 
 > Vibrate on error
 
+
+##### How to implement
+
+1. Add PinView to your layout
+<pre>
+&lt;com.kbeanie.pinscreenlibrary.PinView
+    android:id="@+id/pinView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" /&gt;
+</pre>
+
+2. Initialize and Setup Modes
+<pre>
+pinView.setModeSetup(PinEntrySetupListener);
+
+or
+
+pinView.setModeAuthenticate(PinEntryAuthenticationListener)
+</pre>
+
+3. Handle callbacks
+
+
 <div style="text-align: center;">
     <img src="demo.gif" width="200"/>
 </div>
