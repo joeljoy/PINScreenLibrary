@@ -54,29 +54,29 @@ pinView.setModeAuthenticate(PinEntryAuthenticationListener)
 ##### Styling the view
 <pre>
 <code>
-    &lt:!-- Styles for the keyboard buttons --&gt:
-    &lt:style name="PinButton"&gt:
-        &lt:!-- Preferably a selector drawable --&gt:
-        &lt:item name="android:background"&gt:@drawable/selector_button_my_style&lt:/item&gt:
-        &lt:item name="android:textSize"&gt:@dimen/pin_button_text_size&lt:/item&gt:
-        &lt:item name="android:textStyle"&gt:bold|italic&lt:/item&gt:
+    &lt;!-- Styles for the keyboard buttons --&gt;
+    &lt;style name="PinButton"&gt;
+        &lt;!-- Preferably a selector drawable --&gt;
+        &lt;item name="android:background"&gt;@drawable/selector_button_my_style&lt;/item&gt;
+        &lt;item name="android:textSize"&gt;@dimen/pin_button_text_size&lt;/item&gt;
+        &lt;item name="android:textStyle"&gt;bold|italic&lt;/item&gt;
 
-        &lt:!-- Styles for Button text color --&gt:
-        &lt:item name="android:textColor"&gt:@color/button_text_color_selector&lt:/item&gt:
-    &lt:/style&gt:
+        &lt;!-- Styles for Button text color --&gt;
+        &lt;item name="android:textColor"&gt;@color/button_text_color_selector&lt;/item&gt;
+    &lt;/style&gt;
 
-    &lt:!-- Styles for errors and prompt text --&gt:
-    &lt:style name="PinStatus"&gt:
-        &lt:!-- This can also be a color selector for pressed and normal states --&gt:
-        &lt:item name="android:textColor"&gt:@color/color_pin_status_text&lt:/item&gt:
-        &lt:item name="android:textStyle"&gt:bold|italic&lt:/item&gt:
-    &lt:/style&gt:
+    &lt;!-- Styles for errors and prompt text --&gt;
+    &lt;style name="PinStatus"&gt;
+        &lt;!-- This can also be a color selector for pressed and normal states --&gt;
+        &lt;item name="android:textColor"&gt;@color/color_pin_status_text&lt;/item&gt;
+        &lt;item name="android:textStyle"&gt;bold|italic&lt;/item&gt;
+    &lt;/style&gt;
 
-    &lt:!-- Styles for Pin Entry holes --&gt:
-    &lt:style name="PinEntry"&gt:
-        &lt:!-- A selector definitely with a normal and selected state --&gt:
-        &lt:item name="android:src"&gt:@drawable/selector_pin_entry_my_style&lt:/item&gt:
-    &lt:/style&gt:
+    &lt;!-- Styles for Pin Entry holes --&gt;
+    &lt;style name="PinEntry"&gt;
+        &lt;!-- A selector definitely with a normal and selected state --&gt;
+        &lt;item name="android:src"&gt;@drawable/selector_pin_entry_my_style&lt;/item&gt;
+    &lt;/style&gt;
 </code>
 </pre>
 
