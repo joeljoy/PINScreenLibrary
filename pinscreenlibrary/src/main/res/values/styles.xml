@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-
     <style name="PinButton" parent="Base.Widget.AppCompat.Button">
         <item name="android:background">@drawable/selector_button</item>
         <item name="android:textSize">@dimen/pin_button_text_size</item>
@@ -12,5 +11,9 @@
     <style name="PinStatus" parent="TextAppearance.AppCompat">
         <item name="android:textColor">@color/color_pin_status_text</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PinEntry">
+        <item name="android:src">@drawable/selector_pin_entry</item>
     </style>
 </resources>

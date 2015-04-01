@@ -17,28 +17,28 @@
             android:layout_margin="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/selector_pin_entry" />
+            style="@style/PinEntry"/>
 
         <com.kbeanie.pinscreenlibrary.views.PinImageView
             android:id="@+id/pe1"
             android:layout_margin="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/selector_pin_entry" />
+            style="@style/PinEntry"/>
 
         <com.kbeanie.pinscreenlibrary.views.PinImageView
             android:id="@+id/pe2"
             android:layout_margin="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/selector_pin_entry" />
+            style="@style/PinEntry" />
 
         <com.kbeanie.pinscreenlibrary.views.PinImageView
             android:id="@+id/pe3"
             android:layout_margin="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/selector_pin_entry" />
+            style="@style/PinEntry" />
     </LinearLayout>
 
     <TextView
